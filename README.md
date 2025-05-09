@@ -7,7 +7,7 @@ This project allows you to visualize and animate 3D prisms with a user-defined n
 1. **Clone the repository:**
     
 bash
-    [git clone https://github.com/SergKhachikyan/3D-Polygon-Prism-Visualizer.git](https://github.com/SergKhachikyan/Python_Visualization.git)
+    git clone https://github.com/SergKhachikyan/Python_Visualization.git
 
 
 2. **Navigate to the project directory:**
