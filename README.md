@@ -13,22 +13,25 @@ bash
 2. **Navigate to the project directory:**
     
 bash
+```
     cd visualization
-
+```
 
 3. **Install the dependencies:**
     Make sure Python 3.x is installed, then run:
     
 bash
+```
     pip install -r requirements.txt
-
+```
 
 4. **Launch the project:**
     Run the script:
     
 bash
+```
     python main.py
-
+```
 
 ## 🔧 Technologies
 
@@ -45,8 +48,9 @@ This project uses the following technologies:
     - Open a terminal and run the script:
       
 bash
-      python mainr.py
-
+```
+      python main.py
+```
 
 2. **Input the number of sides:**
     - You'll be prompted to enter a number between 3 and 12 (e.g., 5 for a pentagonal prism).
