@@ -1,8 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
+from matplotlib.animation import FuncAnimation
 
-def draw_prism(n_sides):
+def generate_prism_faces(n_sides):
     angle = np.linspace(0, 2 * np.pi, n_sides, endpoint=False)
     radius = 1
     z_bottom = 0
@@ -22,27 +23,45 @@ def draw_prism(n_sides):
                       top[(i + 1) % n_sides],
                       top[i]])
 
-    # Основания
     faces.append(bottom)
-    faces.append(top[::-1])  
+    faces.append(top[::-1])
 
+    return faces
+
+def draw_rotating_prism(n_sides, save_as_gif=True):
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
+    ax.set_box_aspect([1, 1, 1])
 
-    ax.add_collection3d(Poly3DCollection(faces, facecolors='lightblue', edgecolors='black', linewidths=1, alpha=0.8))
+    faces = generate_prism_faces(n_sides)
+
+    poly = Poly3DCollection(faces, facecolors='lightblue', edgecolors='black', linewidths=1, alpha=0.8)
+    ax.add_collection3d(poly)
 
     ax.set_xlim(-1.5, 1.5)
     ax.set_ylim(-1.5, 1.5)
     ax.set_zlim(0, 1.5)
-
     plt.axis('off')
+
+    def update(angle):
+        ax.view_init(elev=20, azim=angle)
+
+    anim = FuncAnimation(fig, update, frames=np.linspace(0, 360, 120), interval=50)
+
+    if save_as_gif:
+        anim.save("rotating_prism.gif", writer='pillow', fps=24)
+        print("Saved as rotating_prism.gif ✅")
+    else:
+        anim.save("rotating_prism.mp4", writer='ffmpeg', fps=24)
+        print("Saved as rotating_prism.mp4 ✅")
+
     plt.show()
 
 try:
-    n = int(input("Введите количество углов (от 3 до 12): "))
+    n = int(input("Enter number of sides (between 3 and 12): "))
     if 3 <= n <= 12:
-        draw_prism(n)
+        draw_rotating_prism(n, save_as_gif=True)
     else:
-        print("Поддерживаются значения от 3 до 12.")
+        print("Only values from 3 to 12 are supported.")
 except ValueError:
-    print("Введите корректное целое число.")
+    print("Please enter a valid integer.")
