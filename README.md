@@ -7,14 +7,15 @@ This project allows you to visualize and animate 3D prisms with a user-defined n
 1. **Clone the repository:**
     
 bash
-    git clone https://github.com/SergKhachikyan/Python_Visualization.git
-
+```
+git clone https://github.com/SergKhachikyan/Python_Visualization.git
+```
 
 2. **Navigate to the project directory:**
     
 bash
 ```
-    cd visualization
+cd visualization
 ```
 
 3. **Install the dependencies:**
@@ -22,7 +23,7 @@ bash
     
 bash
 ```
-    pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 4. **Launch the project:**
@@ -30,7 +31,7 @@ bash
     
 bash
 ```
-    python main.py
+python main.py
 ```
 
 ## 🔧 Technologies
@@ -49,7 +50,7 @@ This project uses the following technologies:
       
 bash
 ```
-      python main.py
+python main.py
 ```
 
 2. **Input the number of sides:**
