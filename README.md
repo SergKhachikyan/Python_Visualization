@@ -75,6 +75,11 @@ python
 - **Rotating Prism**: Watch the prism rotate around the vertical axis for an animated effect.
 - **Geometry**: The script allows you to visualize prisms with varying polygonal sides, including triangles, squares, pentagons, and more.
 
+
+![3d_cube](https://github.com/user-attachments/assets/4316283c-bfb5-4c6a-81cc-5c52e5e5f1bc)
+
+
+
 ## 🏆 Example: Rotating Cube (4-sided Prism)
 
 ### Static Preview
